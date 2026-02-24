@@ -5,7 +5,7 @@ import { VIDEOS } from '@/lib/data/videos';
 import Footer from '@/components/Footer';
 import {
   ArrowRight, BookOpen, UtensilsCrossed, PlayCircle, Scale,
-  Leaf, Heart, Activity
+  Leaf, Heart, Activity, AlertTriangle, CheckCircle, Info
 } from 'lucide-react';
 
 export default function HomePage() {
@@ -70,6 +70,94 @@ export default function HomePage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* KENALI KEK — SECTION BERANDA */}
+      <section className="max-w-6xl mx-auto px-4 py-10">
+        <div className="bg-gradient-to-br from-[#F6C1C7]/30 via-white to-[#F4A261]/10 rounded-3xl p-6 md:p-10 border border-[#F6C1C7]/50 shadow-soft">
+          {/* Header */}
+          <div className="flex items-start gap-3 mb-6">
+            <div className="w-10 h-10 bg-[#F6C1C7]/40 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+              <AlertTriangle className="w-5 h-5 text-[#E07085]" />
+            </div>
+            <div>
+              <span className="text-xs font-bold text-[#E07085] bg-[#F6C1C7]/50 px-3 py-1 rounded-full">Informasi Penting</span>
+              <h2 className="text-2xl md:text-3xl font-extrabold text-[#4A4A4A] mt-2">
+                Kenali <span className="text-[#E07085]">KEK</span> pada Ibu Hamil
+              </h2>
+              <p className="text-[#7A7A7A] mt-1 text-sm leading-relaxed">
+                Kekurangan Energi Kronis (KEK) adalah kondisi kekurangan gizi jangka panjang yang berisiko tinggi bagi ibu dan janin. LILA &lt; 23,5 cm menjadi indikator utama.
+              </p>
+            </div>
+          </div>
+
+          {/* Info Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            {/* Tanda */}
+            <div className="bg-white rounded-2xl p-5 border border-[#F6C1C7]/30 shadow-sm">
+              <div className="flex items-center gap-2 mb-3">
+                <Info className="w-4 h-4 text-[#F4A261]" />
+                <h3 className="font-bold text-sm text-[#4A4A4A]">Tanda pada Ibu</h3>
+              </div>
+              <ul className="space-y-1.5">
+                {['Mudah lelah dan lemas', 'Berat badan sulit naik', 'Nafsu makan rendah'].map((t) => (
+                  <li key={t} className="flex items-start gap-2 text-xs text-[#7A7A7A]">
+                    <span className="w-1.5 h-1.5 bg-[#F4A261] rounded-full mt-1.5 flex-shrink-0" />
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Dampak */}
+            <div className="bg-white rounded-2xl p-5 border border-[#F6C1C7]/30 shadow-sm">
+              <div className="flex items-center gap-2 mb-3">
+                <AlertTriangle className="w-4 h-4 text-[#E07085]" />
+                <h3 className="font-bold text-sm text-[#4A4A4A]">Dampak Berbahaya</h3>
+              </div>
+              <ul className="space-y-1.5">
+                {[
+                  'Anemia & komplikasi persalinan',
+                  'Bayi lahir berat badan rendah (BBLR)',
+                  'Risiko stunting pada anak',
+                ].map((t) => (
+                  <li key={t} className="flex items-start gap-2 text-xs text-[#7A7A7A]">
+                    <span className="w-1.5 h-1.5 bg-[#E07085] rounded-full mt-1.5 flex-shrink-0" />
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Pencegahan */}
+            <div className="bg-white rounded-2xl p-5 border border-[#F6C1C7]/30 shadow-sm">
+              <div className="flex items-center gap-2 mb-3">
+                <CheckCircle className="w-4 h-4 text-[#7BAE7F]" />
+                <h3 className="font-bold text-sm text-[#4A4A4A]">Cara Pencegahan</h3>
+              </div>
+              <ul className="space-y-1.5">
+                {[
+                  'Gizi seimbang sejak pra-kehamilan',
+                  'PMT berbasis pangan lokal',
+                  'ANC rutin minimal 6 kali',
+                ].map((t) => (
+                  <li key={t} className="flex items-start gap-2 text-xs text-[#7A7A7A]">
+                    <span className="w-1.5 h-1.5 bg-[#7BAE7F] rounded-full mt-1.5 flex-shrink-0" />
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <Link
+            href="/artikel/mengenali-kek-pada-ibu-hamil"
+            className="inline-flex items-center gap-2 bg-[#E07085] text-white font-bold px-6 py-3 rounded-2xl hover:bg-[#C05570] hover:-translate-y-0.5 shadow-lg shadow-[#E07085]/30 transition-all text-sm"
+          >
+            <BookOpen className="w-4 h-4" /> Baca Artikel Lengkap <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
 

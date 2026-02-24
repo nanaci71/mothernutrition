@@ -10,266 +10,248 @@ export interface Article {
 }
 
 export const CATEGORIES = [
-    'Gizi Ibu Hamil',
-    'Nutrisi Bayi',
-    'Kesehatan Umum',
-    'Pola Makan Sehat',
+    'KEK & Gizi Ibu Hamil',
+    'Strategi Makan Sehat',
+    'Kebutuhan Gizi',
 ];
 
 export const ARTICLES: Article[] = [
     {
         id: 1,
-        title: 'Panduan Nutrisi Lengkap untuk Ibu Hamil Trimester Pertama',
-        slug: 'nutrisi-ibu-hamil-trimester-pertama',
-        excerpt: 'Trimester pertama adalah masa kritis perkembangan janin. Kenali nutrisi penting yang dibutuhkan.',
+        title: 'Mengenali KEK pada Ibu Hamil',
+        slug: 'mengenali-kek-pada-ibu-hamil',
+        excerpt: 'Kekurangan Energi Kronis (KEK) adalah kondisi kekurangan gizi jangka panjang yang berisiko bagi ibu hamil dan janin. Kenali tanda, dampak, penyebab, dan cara pencegahannya.',
         content: `
-## Nutrisi Penting di Trimester Pertama
+## Apa itu KEK?
 
-Trimester pertama kehamilan (0–12 minggu) adalah fase terpenting dalam perkembangan janin. Pada masa ini, organ-organ vital janin mulai terbentuk.
+Kekurangan Energi Kronis (KEK) merupakan kondisi kekurangan gizi yang berlangsung lama disebabkan kurangnya asupan energi dan protein, sehingga tubuh tidak mendapatkan energi yang dibutuhkan secara cukup. KEK pada ibu hamil sering diukur dengan **lingkar lengan atas (LILA) kurang dari 23,5 cm**. Ibu hamil yang mengalami KEK menghadapi risiko tinggi terhadap gangguan kesehatan serta pertumbuhan janin yang tidak optimal.
 
-### Asam Folat
-Asam folat sangat penting untuk mencegah cacat tabung saraf. Konsumsi minimal **400 mcg per hari** dari sumber makanan seperti:
-- Bayam dan sayuran hijau
-- Kacang-kacangan
-- Jeruk dan buah berkulit tebal
-- Suplemen prenatal (rekomendasi dokter)
+---
 
-### Zat Besi
-Zat besi mencegah anemia pada ibu hamil. Kebutuhan meningkat menjadi **27 mg per hari**.
+## ⚠️ Tanda & Dampak KEK
 
-**Sumber zat besi:**
-- Daging merah tanpa lemak
-- Ikan dan unggas
-- Tahu dan tempe
-- Sayuran berdaun hijau gelap
+### 📌 Tanda pada Ibu
+- Mudah lelah dan lemas
+- Berat badan sulit naik
+- Nafsu makan rendah
 
-### Kalsium
-Kalsium penting untuk pertumbuhan tulang dan gigi janin. Konsumsi **1000 mg per hari** dari:
-- Susu dan produk olahan susu
-- Ikan teri
-- Brokoli
-- Kedelai
+### 📌 Dampak pada Ibu
+KEK meningkatkan risiko anemia, gangguan kesehatan, dan kemungkinan komplikasi saat persalinan.
 
-### Tips Makan di Trimester Pertama
-1. Makan dalam porsi kecil tapi sering (5–6 kali sehari)
-2. Hindari makanan pedas dan berminyak jika mengalami mual
-3. Minum air putih minimal 8 gelas per hari
-4. Konsumsi jahe hangat untuk mengurangi mual
-    `,
-        category: 'Gizi Ibu Hamil',
-        image: '/images/artikel-1.jpg',
-        created_at: '2024-01-15',
+### 📌 Dampak pada Bayi
+Bayi yang lahir dari ibu dengan KEK cenderung berat badan rendah (BBLR) dan berisiko mengalami stunting saat tumbuh kembang.
+
+---
+
+## 🍽️ Penyebab KEK
+
+Beberapa faktor yang berhubungan dengan kejadian KEK pada ibu hamil:
+
+- ✔ Asupan energi dan protein rendah
+- ✔ Pengetahuan gizi ibu yang kurang
+- ✔ Kondisi sosial ekonomi rendah
+- ✔ Kurangnya dukungan keluarga
+
+---
+
+## 🍲 Cara Pencegahan KEK pada Ibu Hamil
+
+### 1. Penuhi Kebutuhan Gizi Seimbang Sejak Pra-Kehamilan
+- Kunci utama pencegahan KEK adalah memastikan asupan energi dan protein yang cukup. Berdasarkan Angka Kecukupan Gizi (AKG), wanita usia 19–49 tahun membutuhkan **2150–2250 kkal** dan **60 gram protein per hari**.
+- Ibu hamil normal membutuhkan tambahan **180–300 kkal** dan **30 gram protein per hari**, sementara ibu hamil dengan risiko KEK perlu tambahan hingga **500 kkal/hari**.
+- Konsumsi karbohidrat kompleks (beras merah, ubi), protein nabati (kacang, tempe), ikan, telur, serta alpukat.
+- Zat besi sangat penting untuk mencegah anemia — sumbernya dari daging, hati, bayam, sayuran hijau.
+- Konsumsi tablet tambah darah atau MMS setiap hari.
+- Asam folat penting untuk perkembangan saraf janin — dari sayuran hijau, kacang, brokoli, jeruk, telur, hati sapi.
+
+Pencegahan terbaik dimulai bahkan **sebelum kehamilan terjadi**.
+
+### 2. Pemberian Makanan Tambahan (PMT) Berbasis Pangan Lokal
+Program PMT berbasis pangan lokal telah terbukti meningkatkan status gizi ibu hamil dengan KEK. PMT harus diberikan **sebelum usia kehamilan 16 minggu**, dengan porsi kecil tapi sering — menambah **200–450 kalori** dan **12–20 gram protein** harian.
+
+### 3. Pemeriksaan Kandungan Secara Rutin
+- Pemantauan rutin melalui **Antenatal Care (ANC)** membantu mendeteksi dini risiko KEK.
+- Pengukuran LiLA dan IMT secara berkala mengidentifikasi ibu hamil berisiko.
+- Lakukan ANC **minimal 6 kali** selama kehamilan.
+- Segera konsultasikan ke bidan atau dokter jika ada tanda lemas berkepanjangan, berat badan tidak naik, atau pucat.
+
+---
+
+## Sumber
+- LMS Kemenkes RI: [lms.kemkes.go.id](https://lms.kemkes.go.id/courses/79327236-f4c6-4469-9bf4-48312eeb70bf)
+- Kemenkes RI. (2014). *Pedoman Gizi Ibu Hamil dan Pencegahan KEK*. Jakarta: Direktorat Gizi Masyarakat.
+- WHO. (2016). *Recommendations on Antenatal Care for a Positive Pregnancy Experience*. Geneva: WHO.
+- Almatsier, S. (2019). *Prinsip Dasar Ilmu Gizi*. Jakarta: PT Gramedia Pustaka Utama.
+        `,
+        category: 'KEK & Gizi Ibu Hamil',
+        image: '/images/artikel-kek.jpg',
+        created_at: '2025-06-14',
     },
     {
         id: 2,
-        title: 'Cara Menghitung dan Memantau IMT (Indeks Massa Tubuh)',
-        slug: 'cara-menghitung-imt',
-        excerpt: 'IMT adalah indikator utama status gizi seseorang. Pelajari cara menghitung dan interpretasinya.',
+        title: 'Strategi "Makan Sedikit tapi Sering" untuk Ibu Hamil yang Sulit Makan',
+        slug: 'strategi-makan-sedikit-sering-ibu-hamil',
+        excerpt: 'Mual, muntah, dan selera makan yang menurun adalah hal umum saat hamil. Pelajari strategi makan porsi kecil tapi sering untuk tetap memenuhi kebutuhan nutrisi.',
         content: `
-## Apa itu IMT?
+## 🍽️ 1. Mengapa Ibu Hamil Sulit Makan?
 
-Indeks Massa Tubuh (IMT) atau Body Mass Index (BMI) adalah pengukuran yang digunakan untuk menilai status berat badan seseorang berdasarkan tinggi dan berat badan.
+Selama kehamilan — terutama pada trimester pertama:
 
-### Rumus IMT
-\`\`\`
-IMT = Berat Badan (kg) / (Tinggi Badan (m))²
-\`\`\`
+- Sering terjadi mual, muntah, atau penurunan selera makan.
+- Volume perut yang berubah menyebabkan rasa kenyang lebih cepat.
+- Efek hormon kehamilan membuat pencernaan bekerja lambat sehingga porsi besar terasa tidak nyaman.
 
-### Kategori IMT (WHO)
+➡️ Solusi praktisnya: **makan dalam porsi kecil tetapi lebih sering sepanjang hari** untuk membantu memenuhi kebutuhan energi dan nutrisi tanpa memicu mual.
 
-| IMT | Kategori |
-|-----|----------|
-| < 18.5 | Berat Badan Kurang (Kurus) |
-| 18.5 – 24.9 | Berat Badan Normal |
-| 25.0 – 29.9 | Kelebihan Berat Badan (Overweight) |
-| ≥ 30.0 | Obesitas |
+---
 
-### Contoh Perhitungan
-Seseorang dengan tinggi 165 cm dan berat 60 kg:
-- Tinggi dalam meter: 1.65 m
-- IMT = 60 / (1.65 × 1.65) = 60 / 2.7225 = **22.04** (Normal)
+## 🧠 2. Prinsip "Makan Sedikit tapi Sering"
 
-### Batasan IMT
-IMT tidak mempertimbangkan:
-- Komposisi lemak vs otot
-- Distribusi lemak tubuh
-- Usia dan jenis kelamin
+Strategi ini meliputi:
 
-Gunakan IMT sebagai **panduan awal**, bukan diagnosis tunggal.
-    `,
-        category: 'Kesehatan Umum',
-        image: '/images/artikel-2.jpg',
-        created_at: '2024-01-20',
+- **Frekuensi makan**: 5–6 kali sehari (3 kali makan utama + 2–3 kali snack sehat)
+- **Porsi kecil**: setiap porsi lebih sedikit dari biasanya
+- **Jenis makanan bergizi seimbang**, terdiri dari:
+  - Karbohidrat kompleks (nasi, roti gandum)
+  - Protein (telur, ayam tanpa lemak, ikan)
+  - Sayur dan buah segar
+  - Sumber lemak sehat (kacang-kacangan, alpukat)
+
+✔ Total asupan nutrisi harian tetap tercapai meskipun porsi setiap jam makan kecil.
+
+---
+
+## 🧪 3. Manfaat Strategi Ini
+
+- Mengurangi rasa mual
+- Menjaga gula darah stabil sepanjang hari
+- Mempermudah pencernaan
+- Membantu pemenuhan kebutuhan energi dan nutrisi tanpa rasa tertekan
+
+➡️ Ini sejalan dengan prinsip pemenuhan kebutuhan gizi ibu hamil untuk mendukung pertumbuhan janin secara optimal.
+
+---
+
+## 💧 4. Tips Tambahan Selama Makan
+
+- ✔ Minum cukup air **antara** waktu makan
+- ✔ Hindari minuman berkafein berlebihan
+- ✔ Hindari makanan yang terlalu berlemak atau pedas saat selera makan rendah
+- ✔ Konsumsi suplemen zat besi / asam folat sesuai rekomendasi tenaga kesehatan
+
+---
+
+## Sumber Materi
+- **Buku KIA – Kesehatan Ibu dan Anak (Kemenkes RI)**: [Unduh Buku KIA (PDF)](https://kesprimkom.kemkes.go.id/assets/uploads/contents/others/Buku_KIA_2024.pdf)
+- **Modul Pelatihan Gizi Ibu Hamil (Kemenkes)**: [Unduh Modul (PDF)](https://repositori-ditjen-nakes.kemkes.go.id/441/1/modul_21010607295920a21e9be701b86777d9e602774b2188_.pdf)
+- **Buku Saku Pencegahan Anemia Ibu Hamil**: [Unduh Buku Saku (PDF)](https://ayosehat.kemkes.go.id/pub/files/197ed157db03c65a4d1be68182613638.pdf)
+        `,
+        category: 'Strategi Makan Sehat',
+        image: '/images/artikel-makan-sedikit.jpg',
+        created_at: '2025-06-14',
     },
     {
         id: 3,
-        title: '10 Makanan Super untuk Pola Makan Sehat Sehari-hari',
-        slug: 'makanan-super-pola-makan-sehat',
-        excerpt: 'Superfoods lokal Indonesia yang mudah didapat dan kaya manfaat untuk kesehatan optimal.',
+        title: 'Kebutuhan Gizi Ibu Hamil: Energi dan Protein yang Perlu Dipenuhi Setiap Hari',
+        slug: 'kebutuhan-gizi-ibu-hamil-energi-protein',
+        excerpt: 'Kehamilan adalah masa penting di mana kebutuhan zat gizi meningkat. Pelajari kebutuhan energi, protein, zat besi, asam folat, vitamin A, dan kalsium selama kehamilan.',
         content: `
-## Superfoods Lokal Indonesia
+## Pendahuluan
 
-Tidak perlu beli produk impor mahal! Indonesia memiliki banyak bahan pangan lokal yang kaya nutrisi.
+Kehamilan adalah masa penting di mana kebutuhan zat gizi meningkat untuk mendukung pertumbuhan janin, pembentukan organ, serta menjaga kesehatan ibu. Pemenuhan gizi yang tepat membantu mencegah komplikasi seperti anemia, BBLR, hingga persalinan prematur.
 
-### 1. Tempe
-Tempe adalah sumber protein nabati terbaik. Mengandung:
-- Protein lengkap (semua asam amino esensial)
-- Probiotik alami
-- Vitamin B12
-- Zat besi dan kalsium
+Asupan zat gizi untuk bayi di dalam kandungan berasal dari simpanan zat gizi di dalam tubuh ibunya. Oleh karena itu sangat penting bagi calon ibu hamil mempunyai **status gizi yang baik sebelum memasuki kehamilan** (tidak kurus, tidak anemia, tidak gemuk).
 
-### 2. Ikan Teri
-Ikan kecil penuh kalsium dan omega-3. Sangat baik untuk:
-- Kesehatan tulang
-- Perkembangan otak
-- Ibu hamil dan menyusui
+---
 
-### 3. Daun Kelor (Moringa)
-Disebut "pohon keajaiban" karena kandungannya:
-- 7x lebih banyak vitamin C dari jeruk
-- 4x lebih banyak kalsium dari susu
-- 2x lebih banyak protein dari yogurt
+## 🥗 A. Kebutuhan Zat Gizi Makro
 
-### 4. Pisang
-Sumber energi alami yang kaya:
-- Kalium (baik untuk jantung)
-- Vitamin B6
-- Serat larut
+Zat gizi makro adalah zat gizi yang dibutuhkan dalam jumlah besar: **energi, protein, karbohidrat, dan lemak**.
 
-### 5. Kunyit
-Rempah anti-inflamasi alami yang mengandung kurkumin.
+### 1. Kebutuhan Energi saat Hamil
 
-Tambahkan ke dalam masakan sehari-hari untuk manfaat optimal!
-    `,
-        category: 'Pola Makan Sehat',
-        image: '/images/artikel-3.jpg',
-        created_at: '2024-01-25',
-    },
-    {
-        id: 4,
-        title: 'Kebutuhan Nutrisi Bayi 0–6 Bulan: Panduan ASI Eksklusif',
-        slug: 'nutrisi-bayi-asi-eksklusif',
-        excerpt: 'ASI adalah makanan terbaik untuk bayi. Simak kandungan gizi ASI dan tips menyusui yang berhasil.',
-        content: `
-## ASI: Makanan Sempurna untuk Bayi
+- **Trimester I**: Belum ada peningkatan signifikan
+- **Trimester II**: Tambahan **±340 kkal/hari**
+- **Trimester III**: Tambahan **±452 kkal/hari**
 
-Air Susu Ibu (ASI) adalah nutrisi paling lengkap yang bisa diberikan kepada bayi 0–6 bulan.
+Tambahan energi diperlukan untuk: pertumbuhan janin, pembentukan jaringan plasenta, peningkatan volume darah ibu, dan persiapan menyusui.
 
-### Kandungan Utama ASI
-- **Laktosa**: Sumber energi utama bayi
-- **Protein whey**: Mudah dicerna bayi
-- **Lemak esensial**: DHA untuk perkembangan otak
-- **Imunoglobulin**: Antibodi pelindung
-- **Vitamin dan mineral**: Sesuai kebutuhan bayi
+> 💡 Tambahan kalori bukan berarti makan dua porsi besar, tetapi tetap mengikuti prinsip **gizi seimbang**.
 
-### Manfaat ASI Eksklusif
-1. Mencegah infeksi saluran pernapasan dan pencernaan
-2. Mengurangi risiko alergi
-3. Mendukung perkembangan otak optimal
-4. Mempererat ikatan ibu dan bayi
+### 2. Kebutuhan Protein saat Hamil
 
-### Tips Sukses Menyusui
-- Susui sesering mungkin (8–12 kali per hari)
-- Pastikan pelekatan (latch) yang benar
-- Ibu harus cukup makan, minum, dan istirahat
-- Hindari stres berlebihan
+Protein berperan dalam pembentukan sel dan jaringan janin, pertumbuhan plasenta, dan produksi darah ibu.
 
-WHO merekomendasikan ASI eksklusif selama **6 bulan penuh**.
-    `,
-        category: 'Nutrisi Bayi',
-        image: '/images/artikel-4.jpg',
-        created_at: '2024-02-01',
-    },
-    {
-        id: 5,
-        title: 'Menu Sehat Ibu Hamil Trimester Kedua dan Ketiga',
-        slug: 'menu-sehat-ibu-hamil-trimester-2-3',
-        excerpt: 'Panduan menu harian bergizi untuk mendukung tumbuh kembang optimal janin di trimester 2 dan 3.',
-        content: `
-## Kebutuhan Gizi Trimester 2 & 3
+- Tidak hamil: **55–65 gram/hari**
+- Trimester I: +1 gram/hari
+- Trimester II: +10 gram/hari
+- Trimester III: +30 gram/hari
 
-Di trimester kedua dan ketiga, janin tumbuh pesat. Kebutuhan kalori ibu hamil meningkat **300–500 kalori per hari**.
+**Sumber protein terbaik**: Telur 🥚, Ayam 🍗, Ikan 🐟, Daging 🥩, Tahu & Tempe 🌱
 
-### Contoh Menu Sehari
+### 3. Kebutuhan Karbohidrat dan Lemak
 
-**Sarapan (08.00):**
-- Nasi tim dengan ayam suwir
-- Tumis bayam dengan bawang putih
-- Segelas susu khusus ibu hamil
+- Karbohidrat: **60–65% energi harian** (±3–4 porsi makanan pokok per hari)
+- Lemak: **20–35% dari total energi**, tambahan ±2 gram/hari
 
-**Snack Pagi (10.00):**
-- Buah pepaya 1 mangkuk
-- Yogurt plain tanpa gula
+Pilih lemak sehat dari: alpukat 🥑, kacang-kacangan 🥜, ikan 🐟
 
-**Makan Siang (12.00):**
-- Nasi merah 1 piring
-- Ikan salmon kukus
-- Sayur bening bayam dan jagung
-- Tempe goreng
+---
 
-**Snack Sore (15.00):**
-- Kacang rebus
-- Air kelapa muda
+## 🍊 B. Kebutuhan Zat Gizi Mikro
 
-**Makan Malam (18.00):**
-- Nasi putih setengah piring
-- Sup tahu dan wortel
-- Tumis kangkung
-- Telur rebus 1 butir
+Zat gizi mikro dibutuhkan dalam jumlah kecil, tetapi perannya sangat besar.
 
-### Yang Perlu Dihindari
-- Makanan mentah atau setengah matang
-- Ikan tinggi merkuri (tuna besar, ikan pedang)
-- Kafein berlebih (maksimal 200mg/hari)
-- Alkohol
-    `,
-        category: 'Gizi Ibu Hamil',
-        image: '/images/artikel-5.jpg',
-        created_at: '2024-02-05',
-    },
-    {
-        id: 6,
-        title: 'Pentingnya Zat Besi untuk Mencegah Anemia pada Ibu Hamil',
-        slug: 'zat-besi-cegah-anemia-ibu-hamil',
-        excerpt: 'Anemia adalah masalah gizi utama ibu hamil. Kenali gejala, penyebab, dan cara mencegahnya.',
-        content: `
-## Anemia pada Ibu Hamil
+Kekurangan zat gizi mikro dapat menyebabkan: anemia ⚠, preeklampsia ⚠, BBLR ⚠, gangguan perkembangan otak dan saraf ⚠, prematuritas ⚠.
 
-Anemia defisiensi besi adalah kondisi paling umum pada ibu hamil. Ditandai dengan kadar hemoglobin < 11 g/dL.
+### 1. Zat Besi
+- Tidak hamil: **15–18 mg/hari**
+- Hamil: +9 mg/hari pada trimester II & III
 
-### Gejala Anemia
-- Mudah lelah dan lemas
-- Pucat (bibir, kuku, kelopak mata dalam)
-- Pusing dan sakit kepala
-- Sesak napas
+**Sumber**: Daging merah 🥩, ayam 🍗, ikan 🐟, sayuran hijau tua 🥬, buah berwarna oranye 🍊
 
-### Risiko jika Tidak Ditangani
-- Bayi lahir dengan berat rendah (BBLR)
-- Kelahiran prematur
-- Daya tahan tubuh bayi lemah
+### 2. Asam Folat
+- Tidak hamil: **400 mcg/hari**
+- Hamil: **600 mcg/hari**
 
-### Sumber Zat Besi Terbaik
+Kekurangan folat meningkatkan risiko **spina bifida** (kelainan tabung saraf).
 
-**Hewani (penyerapan lebih baik):**
-- Daging sapi dan ayam
-- Hati ayam (kaya zat besi)
-- Ikan dan seafood
+**Sumber**: Jeruk 🍊, sayuran hijau tua 🥬, kacang-kacangan 🥜, hati 🥩
 
-**Nabati:**
-- Bayam merah
-- Kacang-kacangan
-- Tahu dan tempe
-- Brokoli
+### 3. Vitamin A
+- Tidak hamil: **600 RE/hari**
+- Hamil: **900 RE/hari**
 
-### Tips Meningkatkan Penyerapan Zat Besi
-1. Konsumsi vitamin C bersamaan (jeruk, tomat)
-2. Hindari minum teh/kopi saat makan
-3. Masak dengan wajan besi
+⚠ Hindari konsumsi berlebihan dalam bentuk suplemen karena dapat berbahaya.
 
-Konsultasikan dengan dokter untuk suplementasi zat besi yang tepat.
-    `,
-        category: 'Gizi Ibu Hamil',
-        image: '/images/artikel-6.jpg',
-        created_at: '2024-02-10',
+**Sumber alami**: Wortel 🥕, ubi jalar 🍠, bayam 🥬, brokoli 🥦, telur 🥚, ikan 🐟
+
+### 4. Kalsium
+
+WHO merekomendasikan suplementasi **1,5–2 gram/hari** (dibagi 3 dosis) pada populasi dengan konsumsi kalsium rendah, dimulai usia kehamilan 20 minggu.
+
+**Sumber**: Susu dan produk olahannya 🥛, sereal 🌾, sayuran hijau 🥬
+
+---
+
+## 🌼 Kesimpulan
+
+Pemenuhan gizi ibu hamil harus:
+- ✔ Seimbang
+- ✔ Cukup energi
+- ✔ Tinggi protein
+- ✔ Kaya vitamin dan mineral
+- ✔ Disertai pemantauan kenaikan berat badan yang optimal
+
+Gizi yang baik selama kehamilan bukan hanya untuk ibu, tetapi juga **investasi kesehatan jangka panjang bagi bayi** 👶💚
+
+---
+
+## Sumber
+- [PGS Ibu Hamil dan Ibu Menyusui – Google Drive](https://drive.google.com/file/d/1f0GKY_M3DOX5ENJ2cZG7XRzZ4cFAfvyI/view)
+        `,
+        category: 'Kebutuhan Gizi',
+        image: '/images/artikel-kebutuhan-gizi.jpg',
+        created_at: '2025-06-14',
     },
 ];

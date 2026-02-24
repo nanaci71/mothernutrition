@@ -2,12 +2,12 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, UtensilsCrossed, PlayCircle, Scale } from 'lucide-react';
+import { Home, UtensilsCrossed, LibraryBig, Scale } from 'lucide-react';
 
 const navItems = [
     { href: '/', label: 'Beranda', icon: Home },
     { href: '/resep', label: 'Resep', icon: UtensilsCrossed },
-    { href: '/video', label: 'Video', icon: PlayCircle },
+    { href: '/video', label: 'Media', icon: LibraryBig },
     { href: '/imt', label: 'IMT', icon: Scale },
 ];
 

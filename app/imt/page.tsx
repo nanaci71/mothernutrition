@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, Scale, Info, Target } from 'lucide-react';
+import { ArrowLeft, Scale, Info, Target, Instagram } from 'lucide-react';
 
 interface IMTResult {
     imt: number;
@@ -71,11 +71,39 @@ const IMT_CATEGORIES = [
     { label: 'Obesitas', range: '≥ 30', color: 'bg-red-400', width: '20%' },
 ];
 
+const TEAM = [
+    {
+        name: 'Suci Wijiwati',
+        nim: '23061334166',
+        instagram: 'https://www.instagram.com/suciwjwty_/',
+        handle: '@suciwjwty_',
+        initial: 'S',
+        color: 'bg-[#7BAE7F]',
+    },
+    {
+        name: 'Siska Dwi Kuntari',
+        nim: '23061334096',
+        instagram: 'https://www.instagram.com/ssiskaa_ssi/',
+        handle: '@ssiskaa_ssi',
+        initial: 'S',
+        color: 'bg-[#F4A261]',
+    },
+    {
+        name: 'Ayu Tri Cahyani',
+        nim: '23061334109',
+        instagram: 'https://www.instagram.com/ayuutchya_/',
+        handle: '@ayuutchya_',
+        initial: 'A',
+        color: 'bg-[#F6C1C7]',
+    },
+];
+
 export default function IMTPage() {
     const [tinggi, setTinggi] = useState('');
     const [berat, setBerat] = useState('');
     const [result, setResult] = useState<IMTResult | null>(null);
     const [error, setError] = useState('');
+    const [showCredit, setShowCredit] = useState(false);
 
     const handleHitung = () => {
         const t = parseFloat(tinggi);
@@ -291,6 +319,105 @@ export default function IMTPage() {
                     </table>
                 </div>
             )}
+
+            {/* ── Hidden Credit Section ── */}
+            <div className="mt-16 pt-4 border-t border-gray-100">
+                {/* Subtle trigger */}
+                <button
+                    onClick={() => setShowCredit(!showCredit)}
+                    className="mx-auto flex flex-col items-center gap-1 group opacity-30 hover:opacity-70 transition-opacity duration-300"
+                    aria-label="Tentang website ini"
+                >
+                    <span className="text-[10px] text-[#AAAAAA] tracking-widest uppercase font-medium">
+                        {showCredit ? 'tutup' : 'tentang'}
+                    </span>
+                    <div className="w-6 h-0.5 rounded-full bg-[#AAAAAA] group-hover:bg-[#7BAE7F] transition-colors" />
+                </button>
+
+                {/* Expandable credit content */}
+                {showCredit && (
+                    <div className="mt-6 animate-in slide-in-from-bottom-4 duration-500 space-y-6">
+
+                        {/* About program */}
+                        <div className="bg-white rounded-3xl shadow-soft p-6 text-center">
+                            <div className="w-12 h-12 bg-[#7BAE7F]/15 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <span className="text-2xl">💚</span>
+                            </div>
+                            <h2 className="text-lg font-extrabold text-[#4A4A4A] mb-2">Tentang Website Ini</h2>
+                            <p className="text-sm text-[#7A7A7A] leading-relaxed">
+                                Website ini merupakan bagian dari program{' '}
+                                <strong className="text-[#4A4A4A]">Praktik Kerja Lapangan (PKL) Gizi Masyarakat Gedangan</strong>{' '}
+                                yang dilaksanakan oleh mahasiswa Program Studi Gizi{' '}
+                                <strong className="text-[#4A4A4A]">Universitas Negeri Surabaya</strong>{' '}
+                                bekerja sama dengan{' '}
+                                <strong className="text-[#4A4A4A]">Puskesmas Gedangan, Sidoarjo</strong>.
+                            </p>
+                            <p className="text-sm text-[#7A7A7A] leading-relaxed mt-3">
+                                Dibuat sebagai media edukasi kesehatan dan gizi, khususnya bagi ibu hamil,
+                                untuk mendukung peningkatan pengetahuan dan pemantauan status gizi secara mandiri.
+                            </p>
+                        </div>
+
+                        {/* Tujuan */}
+                        <div className="bg-[#7BAE7F]/5 border border-[#7BAE7F]/20 rounded-2xl p-5">
+                            <h3 className="text-sm font-bold text-[#4A4A4A] mb-3">🎯 Tujuan Website</h3>
+                            <ul className="space-y-2">
+                                {[
+                                    'Memberikan edukasi gizi bagi ibu hamil',
+                                    'Menyediakan informasi resep sehat',
+                                    'Menyediakan media pembelajaran berbasis digital',
+                                    'Mendukung program kesehatan masyarakat',
+                                ].map((item) => (
+                                    <li key={item} className="flex items-start gap-2 text-sm text-[#7A7A7A]">
+                                        <span className="text-[#7BAE7F] font-bold mt-0.5">✓</span>
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Tim Penyusun */}
+                        <div>
+                            <h3 className="text-sm font-bold text-[#4A4A4A] mb-3 text-center">👩‍⚕️ Tim Penyusun</h3>
+                            <div className="space-y-3">
+                                {TEAM.map((member, i) => (
+                                    <div
+                                        key={member.nim}
+                                        className="bg-white rounded-2xl shadow-soft p-4 flex items-center gap-4"
+                                    >
+                                        {/* Avatar */}
+                                        <div className={`w-12 h-12 rounded-2xl ${member.color} flex items-center justify-center flex-shrink-0`}>
+                                            <span className="text-white font-extrabold text-lg">{i + 1}</span>
+                                        </div>
+                                        {/* Info */}
+                                        <div className="flex-1 min-w-0">
+                                            <p className="font-bold text-[#4A4A4A] text-sm">{member.name}</p>
+                                            <p className="text-xs text-[#AAAAAA] font-medium">NIM: {member.nim}</p>
+                                        </div>
+                                        {/* Instagram */}
+                                        <a
+                                            href={member.instagram}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex flex-col items-center gap-0.5 text-[#E1306C] hover:opacity-80 transition-opacity flex-shrink-0"
+                                            title={member.handle}
+                                        >
+                                            <Instagram className="w-5 h-5" />
+                                            <span className="text-[10px] font-medium">{member.handle}</span>
+                                        </a>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Footer note */}
+                        <p className="text-center text-xs text-[#AAAAAA] pb-2">
+                            💚 Dikembangkan sebagai bentuk kontribusi mahasiswa dalam mendukung program
+                            peningkatan kesehatan ibu dan anak di wilayah kerja Puskesmas Gedangan, Sidoarjo.
+                        </p>
+                    </div>
+                )}
+            </div>
         </div>
     );
 }

@@ -1,7 +1,8 @@
 import { ARTICLES } from '@/lib/data/articles';
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, Calendar, Tag } from 'lucide-react';
+import { ArrowLeft, Calendar, Tag, BookOpen } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
 export function generateStaticParams() {
@@ -19,8 +20,19 @@ export default async function DetailArtikelPage({ params }: { params: Promise<{ 
                 <ArrowLeft className="w-4 h-4" /> Kembali ke Artikel
             </Link>
 
-            <div className="w-full h-56 bg-gradient-to-br from-[#7BAE7F]/20 to-[#F6C1C7]/20 rounded-3xl flex items-center justify-center mb-6">
-                <span className="text-5xl">📄</span>
+            <div className="w-full h-56 bg-gradient-to-br from-[#7BAE7F]/20 to-[#F6C1C7]/20 rounded-3xl flex items-center justify-center mb-6 relative overflow-hidden">
+                {article!.image ? (
+                    <Image
+                        src={article!.image}
+                        alt={article!.title}
+                        fill
+                        className="object-cover rounded-3xl"
+                        sizes="(max-width: 768px) 100vw, 672px"
+                        priority
+                    />
+                ) : (
+                    <BookOpen className="w-12 h-12 text-[#7BAE7F]/40" />
+                )}
             </div>
 
             <div className="flex items-center gap-3 mb-4 flex-wrap">

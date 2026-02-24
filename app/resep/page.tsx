@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { RECIPES, RECIPE_CATEGORIES } from '@/lib/data/recipes';
 import { Search, UtensilsCrossed, Clock, ArrowLeft } from 'lucide-react';
@@ -78,8 +79,18 @@ export default function ResepPage() {
                             href={`/resep/${recipe.slug}`}
                             className="group bg-white rounded-2xl shadow-soft hover:shadow-card hover:-translate-y-1 transition-all overflow-hidden"
                         >
-                            <div className="h-40 bg-gradient-to-br from-[#F4A261]/20 to-[#F6C1C7]/20 flex items-center justify-center">
-                                <UtensilsCrossed className="w-10 h-10 text-[#F4A261]/50 group-hover:scale-110 transition-transform" />
+                            <div className="h-40 bg-gradient-to-br from-[#F4A261]/20 to-[#F6C1C7]/20 flex items-center justify-center relative overflow-hidden">
+                                {recipe.image ? (
+                                    <Image
+                                        src={recipe.image}
+                                        alt={recipe.title}
+                                        fill
+                                        className="object-cover group-hover:scale-105 transition-transform"
+                                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                                    />
+                                ) : (
+                                    <UtensilsCrossed className="w-10 h-10 text-[#F4A261]/50 group-hover:scale-110 transition-transform" />
+                                )}
                             </div>
                             <div className="p-4">
                                 <span className="inline-block text-xs font-bold text-[#F4A261] bg-[#F4A261]/10 px-2 py-0.5 rounded-full mb-2">

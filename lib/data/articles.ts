@@ -84,8 +84,8 @@ Program PMT berbasis pangan lokal telah terbukti meningkatkan status gizi ibu ha
 - Almatsier, S. (2019). *Prinsip Dasar Ilmu Gizi*. Jakarta: PT Gramedia Pustaka Utama.
         `,
         category: 'KEK & Gizi Ibu Hamil',
-        image: '/images/artikel-kek.jpg',
-        created_at: '2025-06-14',
+        image: '/images/artikel-kek.png',
+        created_at: '2026-02-25',
     },
     {
         id: 2,
@@ -147,8 +147,8 @@ Strategi ini meliputi:
 - **Buku Saku Pencegahan Anemia Ibu Hamil**: [Unduh Buku Saku (PDF)](https://ayosehat.kemkes.go.id/pub/files/197ed157db03c65a4d1be68182613638.pdf)
         `,
         category: 'Strategi Makan Sehat',
-        image: '/images/artikel-makan-sedikit.jpg',
-        created_at: '2025-06-14',
+        image: '/images/artikel-makan-sedikit.png',
+        created_at: '2026-02-14',
     },
     {
         id: 3,
@@ -251,7 +251,7 @@ Gizi yang baik selama kehamilan bukan hanya untuk ibu, tetapi juga **investasi k
 - [PGS Ibu Hamil dan Ibu Menyusui – Google Drive](https://drive.google.com/file/d/1f0GKY_M3DOX5ENJ2cZG7XRzZ4cFAfvyI/view)
         `,
         category: 'Kebutuhan Gizi',
-        image: '/images/artikel-kebutuhan-gizi.jpg',
+        image: '/images/artikel-kebutuhan-gizi.png',
         created_at: '2025-06-14',
     },
 ];

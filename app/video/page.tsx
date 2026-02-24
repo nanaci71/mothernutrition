@@ -5,6 +5,7 @@ import { VIDEOS, VIDEO_CATEGORIES } from '@/lib/data/videos';
 import { LEAFLETS, LEAFLET_CATEGORIES } from '@/lib/data/leaflets';
 import { BOOKLETS, BOOKLET_CATEGORIES } from '@/lib/data/booklets';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
     Search, PlayCircle, ArrowLeft, Clock,
     BookOpen, FileText, Download, ChevronLeft, ChevronRight, X, ExternalLink,
@@ -192,8 +193,8 @@ export default function MediaEdukasi() {
                             key={tab.id}
                             onClick={() => handleTabChange(tab.id)}
                             className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-bold transition-all ${activeTab === tab.id
-                                    ? 'bg-white text-[#7BAE7F] shadow-sm'
-                                    : 'text-[#7A7A7A] hover:text-[#4A4A4A]'
+                                ? 'bg-white text-[#7BAE7F] shadow-sm'
+                                : 'text-[#7A7A7A] hover:text-[#4A4A4A]'
                                 }`}
                         >
                             {tab.icon}
@@ -221,8 +222,8 @@ export default function MediaEdukasi() {
                             key={cat}
                             onClick={() => setActiveCategory(cat)}
                             className={`flex-shrink-0 px-4 py-2 rounded-xl text-sm font-semibold transition-all ${activeCategory === cat
-                                    ? 'bg-[#7BAE7F] text-white shadow-sm'
-                                    : 'bg-white text-[#7A7A7A] border border-gray-200 hover:border-[#7BAE7F]/50'
+                                ? 'bg-[#7BAE7F] text-white shadow-sm'
+                                : 'bg-white text-[#7A7A7A] border border-gray-200 hover:border-[#7BAE7F]/50'
                                 }`}
                         >
                             {cat}
@@ -251,7 +252,18 @@ export default function MediaEdukasi() {
                                         className="group bg-white rounded-2xl shadow-soft hover:shadow-card hover:-translate-y-1 transition-all overflow-hidden"
                                     >
                                         <div className="relative h-44 bg-gradient-to-br from-[#7BAE7F]/20 to-[#F6C1C7]/20 overflow-hidden">
-                                            <div className="absolute inset-0 flex items-center justify-center">
+                                            {/* Thumbnail image */}
+                                            {video.thumbnail && (
+                                                <Image
+                                                    src={video.thumbnail}
+                                                    alt={video.title}
+                                                    fill
+                                                    className="object-cover group-hover:scale-105 transition-transform"
+                                                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                                />
+                                            )}
+                                            {/* Play button overlay */}
+                                            <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-all">
                                                 <div className="w-14 h-14 bg-white/80 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                                                     <PlayCircle className="w-8 h-8 text-[#7BAE7F]" />
                                                 </div>
@@ -360,10 +372,20 @@ export default function MediaEdukasi() {
                                         >
                                             {/* Side banner */}
                                             <div
-                                                className="w-36 flex-shrink-0 flex items-center justify-center relative"
+                                                className="w-36 flex-shrink-0 flex items-center justify-center relative overflow-hidden"
                                                 style={{ background: `linear-gradient(180deg, ${booklet.color}40, ${booklet.color}20)` }}
                                             >
-                                                <BookOpen className="w-12 h-12" style={{ color: booklet.color }} />
+                                                {booklet.image ? (
+                                                    <Image
+                                                        src={booklet.image}
+                                                        alt={booklet.title}
+                                                        fill
+                                                        className="object-cover"
+                                                        sizes="144px"
+                                                    />
+                                                ) : (
+                                                    <BookOpen className="w-12 h-12" style={{ color: booklet.color }} />
+                                                )}
                                                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all" />
                                             </div>
                                             {/* Info */}

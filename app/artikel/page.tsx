@@ -1,5 +1,6 @@
 import { ARTICLES, CATEGORIES } from '@/lib/data/articles';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeft, BookOpen, ArrowRight } from 'lucide-react';
 
 export default function ArtikelPage({
@@ -29,8 +30,8 @@ export default function ArtikelPage({
                         key={cat}
                         href={`/artikel${cat === 'Semua' ? '' : `?category=${encodeURIComponent(cat)}`}`}
                         className={`flex-shrink-0 px-4 py-2 rounded-xl text-sm font-semibold transition-all ${activeCategory === cat
-                                ? 'bg-[#7BAE7F] text-white shadow-sm'
-                                : 'bg-white text-[#7A7A7A] border border-gray-200 hover:border-[#7BAE7F]/50'
+                            ? 'bg-[#7BAE7F] text-white shadow-sm'
+                            : 'bg-white text-[#7A7A7A] border border-gray-200 hover:border-[#7BAE7F]/50'
                             }`}
                     >
                         {cat}
@@ -45,8 +46,18 @@ export default function ArtikelPage({
                         href={`/artikel/${article.slug}`}
                         className="group bg-white rounded-2xl shadow-soft hover:shadow-card hover:-translate-y-1 transition-all overflow-hidden"
                     >
-                        <div className="h-44 bg-gradient-to-br from-[#7BAE7F]/20 to-[#F6C1C7]/20 flex items-center justify-center">
-                            <BookOpen className="w-10 h-10 text-[#7BAE7F]/40 group-hover:scale-110 transition-transform" />
+                        <div className="h-44 bg-gradient-to-br from-[#7BAE7F]/20 to-[#F6C1C7]/20 flex items-center justify-center relative overflow-hidden">
+                            {article.image ? (
+                                <Image
+                                    src={article.image}
+                                    alt={article.title}
+                                    fill
+                                    className="object-cover group-hover:scale-105 transition-transform"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                />
+                            ) : (
+                                <BookOpen className="w-10 h-10 text-[#7BAE7F]/40 group-hover:scale-110 transition-transform" />
+                            )}
                         </div>
                         <div className="p-5">
                             <div className="flex items-center justify-between mb-2">

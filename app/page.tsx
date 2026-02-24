@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ARTICLES, CATEGORIES } from '@/lib/data/articles';
 import { RECIPES } from '@/lib/data/recipes';
 import { VIDEOS } from '@/lib/data/videos';
@@ -166,7 +167,7 @@ export default function HomePage() {
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-extrabold text-[#4A4A4A]">Kategori Materi</h2>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-3 md:grid-cols-4 gap-3 md:gap-4">
           {CATEGORIES.map((cat, i) => {
             const colors = ['#7BAE7F', '#F4A261', '#F6C1C7', '#5A8F5E'];
             const color = colors[i % colors.length];
@@ -201,8 +202,18 @@ export default function HomePage() {
               href={`/artikel/${article.slug}`}
               className="group bg-white rounded-2xl shadow-soft hover:shadow-card hover:-translate-y-1 transition-all overflow-hidden"
             >
-              <div className="h-44 bg-gradient-to-br from-[#7BAE7F]/20 to-[#F6C1C7]/20 flex items-center justify-center">
-                <BookOpen className="w-12 h-12 text-[#7BAE7F]/50" />
+              <div className="h-44 bg-gradient-to-br from-[#7BAE7F]/20 to-[#F6C1C7]/20 flex items-center justify-center relative overflow-hidden">
+                {article.image ? (
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                ) : (
+                  <BookOpen className="w-12 h-12 text-[#7BAE7F]/50" />
+                )}
               </div>
               <div className="p-5">
                 <span className="inline-block text-xs font-bold text-[#7BAE7F] bg-[#7BAE7F]/10 px-3 py-1 rounded-full mb-3">
@@ -240,8 +251,18 @@ export default function HomePage() {
                 href={`/resep/${recipe.slug}`}
                 className="group bg-white rounded-2xl shadow-soft hover:shadow-card hover:-translate-y-1 transition-all overflow-hidden"
               >
-                <div className="h-40 bg-gradient-to-br from-[#F4A261]/20 to-[#F6C1C7]/20 flex items-center justify-center">
-                  <UtensilsCrossed className="w-10 h-10 text-[#F4A261]/60" />
+                <div className="h-40 bg-gradient-to-br from-[#F4A261]/20 to-[#F6C1C7]/20 flex items-center justify-center relative overflow-hidden">
+                  {recipe.image ? (
+                    <Image
+                      src={recipe.image}
+                      alt={recipe.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  ) : (
+                    <UtensilsCrossed className="w-10 h-10 text-[#F4A261]/60" />
+                  )}
                 </div>
                 <div className="p-4">
                   <div className="flex items-center justify-between mb-2">
@@ -277,16 +298,27 @@ export default function HomePage() {
             <Link
               key={video.id}
               href={`/video/${video.id}`}
-              className="group bg-white rounded-2xl shadow-soft hover:shadow-card hover:-translate-y-1 transition-all overflow-hidden flex"
+              className="group bg-white rounded-2xl shadow-soft hover:shadow-card hover:-translate-y-1 transition-all overflow-hidden flex flex-col sm:flex-row"
             >
-              <div className="w-36 h-28 bg-gradient-to-br from-[#7BAE7F]/20 to-[#F6C1C7]/20 flex-shrink-0 flex items-center justify-center">
-                <PlayCircle className="w-10 h-10 text-[#7BAE7F]/60" />
+              <div className="w-full h-44 sm:w-44 sm:h-auto sm:flex-shrink-0 bg-gradient-to-br from-[#7BAE7F]/20 to-[#F6C1C7]/20 flex items-center justify-center relative overflow-hidden">
+                {video.thumbnail ? (
+                  <Image
+                    src={video.thumbnail}
+                    alt={video.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, 176px"
+                  />
+                ) : null}
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                  <PlayCircle className="w-10 h-10 text-white drop-shadow" />
+                </div>
               </div>
               <div className="p-4 flex-1">
                 <span className="text-xs font-bold text-[#7BAE7F] bg-[#7BAE7F]/10 px-2 py-0.5 rounded-full">
                   {video.category}
                 </span>
-                <h3 className="font-bold text-[#4A4A4A] text-sm mt-2 line-clamp-2 group-hover:text-[#7BAE7F] transition-colors">
+                <h3 className="font-bold text-[#4A4A4A] text-sm mt-2 line-clamp-3 group-hover:text-[#7BAE7F] transition-colors">
                   {video.title}
                 </h3>
                 <p className="text-xs text-[#AAAAAA] mt-1">⏱ {video.duration}</p>

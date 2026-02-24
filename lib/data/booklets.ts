@@ -6,6 +6,7 @@ export interface Booklet {
     fileUrl: string;
     pages: number;
     color: string;
+    image?: string;
 }
 
 export const BOOKLET_CATEGORIES = [
@@ -22,5 +23,6 @@ export const BOOKLETS: Booklet[] = [
         fileUrl: '/media/Booklet_ibu balita 24-59 bulan.pdf',
         pages: 40,
         color: '#7BAE7F',
+        image: '/images/booklet-ibu-balita.png',
     },
 ];

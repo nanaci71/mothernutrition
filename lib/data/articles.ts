@@ -13,6 +13,7 @@ export const CATEGORIES = [
     'KEK & Gizi Ibu Hamil',
     'Strategi Makan Sehat',
     'Kebutuhan Gizi',
+    'PMT & Gizi',
 ];
 
 export const ARTICLES: Article[] = [
@@ -253,5 +254,74 @@ Gizi yang baik selama kehamilan bukan hanya untuk ibu, tetapi juga **investasi k
         category: 'Kebutuhan Gizi',
         image: '/images/artikel-kebutuhan-gizi.png',
         created_at: '2025-06-14',
+    },
+    {
+        id: 4,
+        title: 'Program Pemberian Makanan Tambahan (PMT) bagi Ibu Hamil KEK',
+        slug: 'program-pmt-ibu-hamil-kek',
+        excerpt: 'Program PMT bagi ibu hamil Kurang Energi Kronis (KEK) bertujuan meningkatkan status gizi ibu hamil melalui pemberian makanan tambahan berbasis pangan lokal yang kaya energi dan protein.',
+        content: `
+## Program Pemberian Makanan Tambahan (PMT) bagi Ibu Hamil Kurang Energi Kronis (KEK)
+
+Ibu hamil merupakan kelompok rentan yang membutuhkan asupan gizi lebih tinggi dibandingkan perempuan tidak hamil. Salah satu permasalahan gizi yang masih banyak ditemukan adalah **Kurang Energi Kronis (KEK)**, yang ditandai dengan Lingkar Lengan Atas (LiLA) < 23,5 cm. Kondisi KEK pada ibu hamil dapat berdampak serius terhadap kesehatan ibu dan pertumbuhan janin apabila tidak ditangani secara tepat. Oleh karena itu, pemerintah melalui **Program Pemberian Makanan Tambahan (PMT) Bumil KEK** berupaya meningkatkan status gizi ibu hamil sebagai bagian dari intervensi gizi spesifik.
+
+---
+
+## 📖 Pengertian Pemberian Makanan Tambahan (PMT)
+
+Pemberian Makanan Tambahan (PMT) ibu hamil adalah intervensi gizi yang diberikan kepada ibu hamil, khususnya yang mengalami Kurang Energi Kronis (KEK), berupa makanan tambahan berbahan pangan lokal yang mengandung energi dan protein. PMT bertujuan untuk **melengkapi asupan gizi harian**, bukan sebagai pengganti makanan utama, agar kebutuhan gizi ibu hamil dapat terpenuhi dengan lebih optimal selama masa kehamilan.
+
+---
+
+## 🎯 Tujuan Program PMT Bumil KEK
+
+Program Pemberian Makanan Tambahan (PMT) bagi ibu hamil KEK bertujuan untuk meningkatnya status gizi ibu hamil melalui pemberian makanan tambahan sesuai dengan standar yang telah ditetapkan.
+
+---
+
+## 👥 Sasaran Program PMT Bumil KEK
+
+### 1. Ibu Hamil Kurang Energi Kronis (KEK)
+Ibu hamil yang mempunyai Indeks Massa Tubuh pra hamil atau pada trimester 1 (< 12 minggu) sebesar **< 18,5 kg/m²**
+
+### 2. Ibu Hamil Risiko KEK
+Ibu hamil yang mempunyai ukuran Lingkar Lengan Atas (LiLA) di bawah **23,5 cm**
+
+---
+
+## ✅ Manfaat PMT bagi Ibu Hamil
+
+1️⃣ **Memperbaiki status gizi** ibu hamil, terutama pada ibu hamil Kurang Energi Kronis (KEK), melalui peningkatan asupan energi dan protein.
+
+2️⃣ **Mendukung pertumbuhan dan perkembangan janin**, sehingga menurunkan risiko bayi lahir dengan berat badan rendah (BBLR).
+
+3️⃣ **Berperan dalam pencegahan stunting**, sebagai bagian dari intervensi gizi spesifik pada 1000 Hari Pertama Kehidupan (HPK).
+
+---
+
+## 📋 Prinsip Pemberian Makanan Tambahan Ibu Hamil
+
+1. Berupa makanan lengkap siap santap atau kudapan — kaya sumber protein hewani dengan memperhatikan gizi seimbang; menggunakan bahan makanan segar (tanpa pengawet buatan) dan membatasi konsumsi Gula, Garam dan Lemak (GGL)
+2. Berupa **tambahan dan bukan pengganti** makanan utama
+3. PMT Ibu Hamil diberikan selama **minimal 120 hari** dengan pendekatan pemberdayaan masyarakat dan penggunaan bahan lokal
+4. Pemberian PMT di Posyandu, Fasyankes, Kelas Ibu Hamil atau melalui kunjungan rumah oleh kader/nakes/mitra
+5. Diberikan setiap hari dengan komposisi sedikitnya **1 kali makanan lengkap dalam seminggu** dan sisanya kudapan. Makanan lengkap diberikan sebagai sarana edukasi implementasi isi piringku. Pemberian MT disertai dengan edukasi, dapat berupa demo masak, penyuluhan dan konseling.
+
+---
+
+## 🌱 Kesimpulan
+
+Program Pemberian Makanan Tambahan (PMT) bagi ibu hamil KEK merupakan salah satu strategi penting dalam perbaikan status gizi ibu dan pencegahan stunting. Melalui pemberian PMT yang tepat sasaran dan didukung dengan edukasi gizi, diharapkan ibu hamil KEK mampu memenuhi kebutuhan gizinya secara lebih baik, sehingga kesehatan ibu dan bayi dapat terjaga secara optimal.
+
+---
+
+## Sumber Referensi
+
+Kementerian Kesehatan RI. Direktorat Jenderal Kesehatan Masyarakat. **2023**.
+*Petunjuk Teknis Pemberian Makanan Tambahan (PMT) Berbahan Pangan Lokal untuk Balita dan Ibu Hamil*. Jakarta: Kementerian Kesehatan Republik Indonesia.
+        `,
+        category: 'PMT & Gizi',
+        image: '/images/artikel-pmt-bumil-kek.jpg',
+        created_at: '2026-02-25',
     },
 ];

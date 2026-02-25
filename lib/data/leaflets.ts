@@ -14,6 +14,7 @@ export const LEAFLET_CATEGORIES = [
     'Ibu Menyusui',
     'Bayi',
     'Balita',
+    'PMT',
 ];
 
 export const LEAFLETS: Leaflet[] = [
@@ -52,5 +53,23 @@ export const LEAFLETS: Leaflet[] = [
         fileUrl: '/media/LEAFLET_MAKANAN SEHAT ANAK BALITA.pdf',
         pages: 2,
         color: '#74B9E0',
+    },
+    {
+        id: 5,
+        title: 'Leaflet PMT Balita Kurus (Gizi Kurang)',
+        description: 'Leaflet informasi Pemberian Makanan Tambahan (PMT) untuk balita kurus atau gizi kurang. Memuat sasaran, jenis PMT, cara pemberian, dan manfaatnya bagi pertumbuhan balita.',
+        category: 'PMT',
+        fileUrl: '/media/Leaflet_PMT_Balita_Kurus.pdf',
+        pages: 2,
+        color: '#F4A261',
+    },
+    {
+        id: 6,
+        title: 'Leaflet PMT Ibu Hamil Kurang Energi Kronis (KEK)',
+        description: 'Leaflet informasi Pemberian Makanan Tambahan (PMT) bagi ibu hamil Kurang Energi Kronis (KEK). Mencakup definisi KEK, sasaran PMT, tujuan, dan prinsip pemberian makanan tambahan.',
+        category: 'PMT',
+        fileUrl: '/media/Leaflet_PMT_Ibu_Hamil_KEK.pdf',
+        pages: 2,
+        color: '#F6C1C7',
     },
 ];

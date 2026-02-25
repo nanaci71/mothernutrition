@@ -12,6 +12,7 @@ export interface Booklet {
 export const BOOKLET_CATEGORIES = [
     'Semua',
     'Ibu & Balita',
+    'PMT',
 ];
 
 export const BOOKLETS: Booklet[] = [
@@ -24,5 +25,14 @@ export const BOOKLETS: Booklet[] = [
         pages: 40,
         color: '#7BAE7F',
         image: '/images/booklet-ibu-balita.png',
+    },
+    {
+        id: 2,
+        title: 'Buku Saku PMT Biskuit bagi Balita Kurus & Ibu Hamil KEK',
+        description: 'Buku saku panduan Pemberian Makanan Tambahan (PMT) berupa biskuit bagi balita kurus dengan gizi kurang dan ibu hamil Kurang Energi Kronis (KEK). Memuat informasi sasaran, manfaat, dan cara pemberian PMT.',
+        category: 'PMT',
+        fileUrl: '/media/Booklet_PMT_Biskuit_Balita_Kurus_dan_Ibu_Hamil_KEK.pdf',
+        pages: 20,
+        color: '#E07B7B',
     },
 ];

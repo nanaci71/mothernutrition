@@ -8,7 +8,7 @@ import { Menu, X, Leaf } from 'lucide-react';
 const navLinks = [
     { href: '/', label: 'Beranda' },
     { href: '/resep', label: 'Resep Sehat' },
-    { href: '/video', label: 'Video Edukasi' },
+    { href: '/video', label: 'Media Edukasi' },
     { href: '/imt', label: 'Kalkulator IMT' },
 ];
 

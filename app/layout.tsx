@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     title: 'MotherNutrition - Edukasi Gizi & Kalkulator IMT',
     description: 'Platform edukasi gizi dan kesehatan untuk ibu hamil dan masyarakat.',
     type: 'website',
+    images: [{ url: '/og.png' }],
   },
 };
 

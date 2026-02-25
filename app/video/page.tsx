@@ -316,7 +316,17 @@ export default function MediaEdukasi() {
                                                 className="h-28 flex items-center justify-center relative overflow-hidden"
                                                 style={{ background: `linear-gradient(135deg, ${leaflet.color}40, ${leaflet.color}20)` }}
                                             >
-                                                <FileText className="w-14 h-14" style={{ color: leaflet.color }} />
+                                                {leaflet.image ? (
+                                                    <Image
+                                                        src={leaflet.image}
+                                                        alt={leaflet.title}
+                                                        fill
+                                                        className="object-cover"
+                                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                                    />
+                                                ) : (
+                                                    <FileText className="w-14 h-14" style={{ color: leaflet.color }} />
+                                                )}
                                                 {/* Open hint */}
                                                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all flex items-center justify-center">
                                                     <span className="opacity-0 group-hover:opacity-100 transition-opacity text-white text-xs font-bold bg-black/40 px-3 py-1.5 rounded-lg flex items-center gap-1">

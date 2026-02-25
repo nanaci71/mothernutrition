@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import BottomNav from '@/components/BottomNav';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mothernutrition.vercel.app'),
   title: 'MotherNutrition - Edukasi Gizi & Kalkulator IMT',
   description: 'Platform edukasi gizi dan kesehatan untuk ibu hamil dan masyarakat. Temukan resep sehat, video edukasi, dan pantau IMT Anda.',
   keywords: 'edukasi gizi, IMT, ibu hamil, resep sehat, kesehatan',
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     title: 'MotherNutrition - Edukasi Gizi & Kalkulator IMT',
     description: 'Platform edukasi gizi dan kesehatan untuk ibu hamil dan masyarakat.',
     type: 'website',
-    images: [{ url: '/og.png' }],
+    images: [{ url: '/og.png', width: 1200, height: 630 }],
   },
 };
 

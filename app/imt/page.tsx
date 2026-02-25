@@ -346,7 +346,7 @@ export default function IMTPage() {
                             <h2 className="text-lg font-extrabold text-[#4A4A4A] mb-2">Tentang Website Ini</h2>
                             <p className="text-sm text-[#7A7A7A] leading-relaxed">
                                 Website ini merupakan bagian dari program{' '}
-                                <strong className="text-[#4A4A4A]">Praktik Kerja Lapangan (PKL) Gizi Masyarakat Gedangan</strong>{' '}
+                                <strong className="text-[#4A4A4A]">Praktik Kerja Lapangan (PKL) Gizi Masyarakat</strong>{' '}
                                 yang dilaksanakan oleh mahasiswa Program Studi Gizi{' '}
                                 <strong className="text-[#4A4A4A]">Universitas Negeri Surabaya</strong>{' '}
                                 bekerja sama dengan{' '}

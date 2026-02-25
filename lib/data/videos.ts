@@ -32,9 +32,9 @@ export const VIDEOS: Video[] = [
     {
         id: 2,
         title: 'Edukasi tentang Ibu Hamil dengan Kekurangan Energi Kronis (KEK)',
-        youtube_url: 'https://www.youtube.com/watch?v=fGBFKXffCvA',
-        youtube_id: 'fGBFKXffCvA',
-        thumbnail: '/images/video-kek-ibu-hamil.png',
+        youtube_url: 'https://www.youtube.com/watch?v=weqUqvImWuk',
+        youtube_id: 'weqUqvImWuk',
+        thumbnail: 'https://i.ytimg.com/vi/weqUqvImWuk/hqdefault.jpg',
         description: 'Ibu hamil membutuhkan asupan gizi yang cukup untuk mendukung pertumbuhan dan perkembangan janin. Namun, masih banyak ibu hamil yang mengalami Kekurangan Energi Kronis (KEK), yaitu kondisi kurangnya asupan energi dalam jangka waktu lama yang dapat berdampak pada kesehatan ibu dan bayi.',
         category: 'Gizi Ibu Hamil',
         duration: '01:14',

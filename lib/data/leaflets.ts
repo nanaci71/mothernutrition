@@ -6,6 +6,7 @@ export interface Leaflet {
     fileUrl: string;
     pages: number;
     color: string;
+    image?: string;
 }
 
 export const LEAFLET_CATEGORIES = [
@@ -26,6 +27,7 @@ export const LEAFLETS: Leaflet[] = [
         fileUrl: '/media/LEAFLET_MAKANAN SEHAT IBU HAMIL.pdf',
         pages: 2,
         color: '#F6C1C7',
+        image: '/images/Makanan Sehat Ibu Hamil.png',
     },
     {
         id: 2,
@@ -35,6 +37,7 @@ export const LEAFLETS: Leaflet[] = [
         fileUrl: '/media/LEAFLET_MAKANAN SEHAT IBU MENYUSUI.pdf',
         pages: 2,
         color: '#7BAE7F',
+        image: '/images/Makanan Sehat Ibu Menyusui.png',
     },
     {
         id: 3,
@@ -44,6 +47,7 @@ export const LEAFLETS: Leaflet[] = [
         fileUrl: '/media/LEAFLET_MAKANAN SEHAT BAYI.pdf',
         pages: 2,
         color: '#F4A261',
+        image: '/images/Makanan Sehat Bayi.png',
     },
     {
         id: 4,
@@ -53,6 +57,7 @@ export const LEAFLETS: Leaflet[] = [
         fileUrl: '/media/LEAFLET_MAKANAN SEHAT ANAK BALITA.pdf',
         pages: 2,
         color: '#74B9E0',
+        image: '/images/Makanan Sehat Anak Balita.png',
     },
     {
         id: 5,
@@ -62,6 +67,7 @@ export const LEAFLETS: Leaflet[] = [
         fileUrl: '/media/Leaflet_PMT_Balita_Kurus.pdf',
         pages: 2,
         color: '#F4A261',
+        image: '/images/Leaflet PMT Balita Kurus (Gizi Kurang).png',
     },
     {
         id: 6,
@@ -71,5 +77,6 @@ export const LEAFLETS: Leaflet[] = [
         fileUrl: '/media/Leaflet_PMT_Ibu_Hamil_KEK.pdf',
         pages: 2,
         color: '#F6C1C7',
+        image: '/images/Leaflet PMT Ibu Hamil Kurang Energi Kronis (KEK).png',
     },
 ];

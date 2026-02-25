@@ -24,7 +24,7 @@ export const BOOKLETS: Booklet[] = [
         fileUrl: '/media/Booklet_ibu balita 24-59 bulan.pdf',
         pages: 40,
         color: '#7BAE7F',
-        image: '/images/booklet-ibu-balita.png',
+        image: '/images/booklet.png',
     },
     {
         id: 2,
@@ -34,5 +34,16 @@ export const BOOKLETS: Booklet[] = [
         fileUrl: '/media/Booklet_PMT_Biskuit_Balita_Kurus_dan_Ibu_Hamil_KEK.pdf',
         pages: 20,
         color: '#E07B7B',
+        image: '/images/booklet.png',
+    },
+    {
+        id: 3,
+        title: 'Buku Resep Makanan Lokal Balita dan Ibu Hamil',
+        description: 'Buku resep makanan lokal yang bergizi dan mudah dibuat untuk bayi, balita, dan ibu hamil.',
+        category: 'Ibu & Balita',
+        fileUrl: '/media/booklet_resep_makanan_lokal.pdf',
+        pages: 35,
+        color: '#F4A261',
+        image: '/images/buku resep makanan lokal bayi, balita dan ibu hamil.png',
     },
 ];

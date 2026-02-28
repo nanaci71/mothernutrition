@@ -297,7 +297,7 @@ export default function IMTPage() {
                     {result.isHamil && result.rekomendasiBumil && (
                         <div className="bg-pink-50 rounded-2xl shadow-soft p-5 border border-pink-100">
                             <h3 className="text-sm font-bold text-pink-700 mb-3 flex items-center gap-2">
-                                <span className="text-base">🤰</span> Rekomendasi Kenaikan Berat Hamil
+                                <span className="text-base">🤰</span> “Rekomendasi Kenaikan Berat Badan Selama Hamil”
                             </h3>
                             <div className="space-y-3">
                                 <div className="bg-white rounded-xl p-3 flex justify-between items-center shadow-sm">

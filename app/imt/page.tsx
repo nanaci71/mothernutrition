@@ -14,9 +14,14 @@ interface IMTResult {
     rekomendasi: string;
     targetMin: number;
     targetMax: number;
+    isHamil?: boolean;
+    rekomendasiBumil?: {
+        totalKenaikan: string;
+        kenaikanPerMinggu: string;
+    };
 }
 
-function hitungIMT(berat: number, tinggiCm: number): IMTResult {
+function hitungIMT(berat: number, tinggiCm: number, isHamil: boolean = false): IMTResult {
     const tinggiM = tinggiCm / 100;
     const imt = berat / (tinggiM * tinggiM);
 
@@ -26,6 +31,7 @@ function hitungIMT(berat: number, tinggiCm: number): IMTResult {
     let warnaBorder: string;
     let warnaText: string;
     let rekomendasi: string;
+    let rekomendasiBumil;
 
     if (imt < 18.5) {
         kategori = 'Berat Badan Kurang (Kurus)';
@@ -34,6 +40,12 @@ function hitungIMT(berat: number, tinggiCm: number): IMTResult {
         warnaBorder = 'border-blue-200';
         warnaText = 'text-blue-700';
         rekomendasi = 'Konsumsi makanan bergizi tinggi dan berkalori cukup. Perbanyak protein, karbohidrat kompleks, dan lemak sehat. Konsultasikan dengan ahli gizi untuk program penambahan berat badan yang aman.';
+        if (isHamil) {
+            rekomendasiBumil = {
+                totalKenaikan: '12.5 - 18 kg',
+                kenaikanPerMinggu: '0.5 kg'
+            };
+        }
     } else if (imt < 25) {
         kategori = 'Berat Badan Normal';
         emoji = '✅';
@@ -41,6 +53,12 @@ function hitungIMT(berat: number, tinggiCm: number): IMTResult {
         warnaBorder = 'border-green-200';
         warnaText = 'text-green-700';
         rekomendasi = 'Berat badan Anda ideal! Pertahankan pola makan sehat dan rutin berolahraga minimal 150 menit per minggu. Konsumsi makanan bergizi seimbang.';
+        if (isHamil) {
+            rekomendasiBumil = {
+                totalKenaikan: '11.5 - 16 kg',
+                kenaikanPerMinggu: '0.4 kg'
+            };
+        }
     } else if (imt < 30) {
         kategori = 'Kelebihan Berat Badan (Overweight)';
         emoji = '⚠️';
@@ -48,6 +66,12 @@ function hitungIMT(berat: number, tinggiCm: number): IMTResult {
         warnaBorder = 'border-yellow-200';
         warnaText = 'text-yellow-700';
         rekomendasi = 'Kurangi asupan kalori harian dan tingkatkan aktivitas fisik. Pilih makanan rendah lemak dan tinggi serat. Hindari makanan olahan dan minuman manis. Targetkan penurunan 0.5–1 kg per minggu.';
+        if (isHamil) {
+            rekomendasiBumil = {
+                totalKenaikan: '7 - 11.5 kg',
+                kenaikanPerMinggu: '0.3 kg'
+            };
+        }
     } else {
         kategori = 'Obesitas';
         emoji = '🔴';
@@ -55,13 +79,19 @@ function hitungIMT(berat: number, tinggiCm: number): IMTResult {
         warnaBorder = 'border-red-200';
         warnaText = 'text-red-700';
         rekomendasi = 'Segera konsultasikan dengan dokter atau ahli gizi. Diperlukan perubahan gaya hidup signifikan meliputi diet sehat, olahraga teratur, dan mungkin bantuan medis. Jangan melakukan diet ekstrem tanpa pengawasan ahli.';
+        if (isHamil) {
+            rekomendasiBumil = {
+                totalKenaikan: '5 - 9 kg',
+                kenaikanPerMinggu: '0.2 kg'
+            };
+        }
     }
 
     // Target berat badan ideal (IMT 18.5 – 24.9)
     const targetMin = Math.round(18.5 * tinggiM * tinggiM * 10) / 10;
     const targetMax = Math.round(24.9 * tinggiM * tinggiM * 10) / 10;
 
-    return { imt: Math.round(imt * 100) / 100, kategori, emoji, warnaBg, warnaBorder, warnaText, rekomendasi, targetMin, targetMax };
+    return { imt: Math.round(imt * 100) / 100, kategori, emoji, warnaBg, warnaBorder, warnaText, rekomendasi, targetMin, targetMax, isHamil, rekomendasiBumil };
 }
 
 const IMT_CATEGORIES = [
@@ -101,6 +131,7 @@ const TEAM = [
 export default function IMTPage() {
     const [tinggi, setTinggi] = useState('');
     const [berat, setBerat] = useState('');
+    const [isHamil, setIsHamil] = useState(false);
     const [result, setResult] = useState<IMTResult | null>(null);
     const [error, setError] = useState('');
     const [showCredit, setShowCredit] = useState(false);
@@ -123,12 +154,13 @@ export default function IMTPage() {
         }
 
         setError('');
-        setResult(hitungIMT(b, t));
+        setResult(hitungIMT(b, t, isHamil));
     };
 
     const handleReset = () => {
         setTinggi('');
         setBerat('');
+        setIsHamil(false);
         setResult(null);
         setError('');
     };
@@ -173,7 +205,7 @@ export default function IMTPage() {
 
                     <div>
                         <label className="block text-sm font-bold text-[#4A4A4A] mb-2">
-                            Berat Badan (kg)
+                            Berat Badan {isHamil ? 'Sebelum Hamil ' : ''}(kg)
                         </label>
                         <div className="relative">
                             <input
@@ -187,6 +219,20 @@ export default function IMTPage() {
                             />
                             <span className="absolute right-4 top-1/2 -translate-y-1/2 text-sm text-[#AAAAAA] font-medium">kg</span>
                         </div>
+                    </div>
+
+                    <div className="flex items-start gap-3 bg-pink-50/50 p-4 rounded-2xl border border-pink-100">
+                        <input
+                            type="checkbox"
+                            id="isHamil"
+                            checked={isHamil}
+                            onChange={(e) => setIsHamil(e.target.checked)}
+                            className="w-5 h-5 mt-0.5 text-pink-500 rounded border-pink-200 focus:ring-pink-500 focus:ring-2 accent-pink-500 cursor-pointer"
+                        />
+                        <label htmlFor="isHamil" className="text-sm font-bold text-[#4A4A4A] cursor-pointer selection:bg-transparent flex-1">
+                            Saya sedang hamil
+                            <p className="text-xs text-[#7A7A7A] font-medium mt-0.5">Gunakan berat badan sebelum kehamilan untuk rekomendasi kenaikan berat badan khusus ibu hamil</p>
+                        </label>
                     </div>
 
                     {error && (
@@ -247,10 +293,32 @@ export default function IMTPage() {
                         </div>
                     </div>
 
+                    {/* Rekomendasi Bumil */}
+                    {result.isHamil && result.rekomendasiBumil && (
+                        <div className="bg-pink-50 rounded-2xl shadow-soft p-5 border border-pink-100">
+                            <h3 className="text-sm font-bold text-pink-700 mb-3 flex items-center gap-2">
+                                <span className="text-base">🤰</span> Rekomendasi Kenaikan Berat Hamil
+                            </h3>
+                            <div className="space-y-3">
+                                <div className="bg-white rounded-xl p-3 flex justify-between items-center shadow-sm">
+                                    <span className="text-sm text-[#7A7A7A] font-medium">Total Kenaikan Disarankan</span>
+                                    <span className="font-extrabold text-pink-600">{result.rekomendasiBumil.totalKenaikan}</span>
+                                </div>
+                                <div className="bg-white rounded-xl p-3 flex text-left gap-3 justify-between items-center shadow-sm">
+                                    <span className="text-sm text-[#7A7A7A] font-medium leading-snug">Kenaikan Per Minggu<br /><span className="text-[10px]">(Trimester 2 & 3)</span></span>
+                                    <span className="font-extrabold text-pink-600 whitespace-nowrap">{result.rekomendasiBumil.kenaikanPerMinggu}</span>
+                                </div>
+                            </div>
+                            <p className="text-[11px] text-pink-600/80 mt-3 italic leading-relaxed">
+                                * Berdasarkan kategori IMT sebelum kehamilan anda.
+                            </p>
+                        </div>
+                    )}
+
                     {/* Target Berat */}
                     <div className="bg-white rounded-2xl shadow-soft p-5">
                         <h3 className="text-sm font-bold text-[#4A4A4A] mb-3 flex items-center gap-2">
-                            <Target className="w-4 h-4 text-[#7BAE7F]" /> Target Berat Badan Ideal
+                            <Target className="w-4 h-4 text-[#7BAE7F]" /> Target Berat Badan Ideal {result.isHamil && '(Saat Tidak Hamil)'}
                         </h3>
                         <p className="text-sm text-[#7A7A7A] mb-3">
                             Untuk tinggi <strong className="text-[#4A4A4A]">{tinggi} cm</strong>, berat badan ideal Anda:
